@@ -1,0 +1,271 @@
+:root {
+    --bg-color: #F7F9FC;
+    --main-text-color: #333;
+    --secondary-text-color: #555;
+    --accent-color: #00ACC1; /* メインカラーに変更 */
+    --accent-color-light: rgba(0, 172, 193, 0.1); /* メインカラーの薄い色に変更 */
+    --white-color: #FFFFFF;
+    --border-color: #EAECEF;
+    --shadow-color: rgba(0, 0, 0, 0.08);
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    margin: 0;
+    background-color: var(--bg-color);
+    color: var(--main-text-color);
+    line-height: 1.8;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    background: var(--white-color);
+    padding: 30px 0;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.logo img {
+    width: 60px;
+    height: 60px;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: var(--accent-color);
+    margin: 0;
+}
+
+.subtitle {
+    font-size: 1.1em;
+    color: var(--secondary-text-color);
+    margin: 0;
+}
+
+.wave-container {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+}
+
+.waves {
+    position: relative;
+    width: 100%;
+    height: 15vh;
+    margin-bottom: -7px;
+    min-height: 100px;
+    max-height: 150px;
+}
+
+.parallax > use {
+    animation: move-forever 25s cubic-bezier(.55,.5,.45,.5) infinite;
+}
+.parallax > use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 7s;
+}
+.parallax > use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 10s;
+}
+.parallax > use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 13s;
+}
+.parallax > use:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 20s;
+}
+
+@keyframes move-forever {
+    0% {
+        transform: translate3d(-90px,0,0);
+    }
+    100% {
+        transform: translate3d(85px,0,0);
+    }
+}
+
+main {
+    padding: 40px 20px;
+}
+
+section {
+    margin-bottom: 60px;
+    padding: 30px;
+    background-color: var(--white-color);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px var(--shadow-color);
+}
+
+h2 {
+    font-size: 1.8em;
+    color: var(--accent-color);
+    border-bottom: 2px solid var(--accent-color-light);
+    padding-bottom: 15px;
+    margin-top: 0;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    margin-right: 12px;
+}
+
+.feature-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.feature-list-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.feature-icon {
+    font-size: 1.8em;
+    line-height: 1;
+}
+
+.feature-list-item h4 {
+    margin: 0 0 5px 0;
+    font-size: 1.2em;
+}
+
+.feature-list-item p {
+    margin: 0;
+    color: var(--secondary-text-color);
+    font-size: 0.95em;
+}
+
+
+.faq-item {
+    border-bottom: 1px solid var(--border-color);
+}
+.faq-item:last-child {
+    border-bottom: none;
+}
+
+.faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 20px 0;
+    text-align: left;
+    font-size: 1.1em;
+    font-family: inherit;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--main-text-color);
+    font-weight: bold;
+}
+
+.faq-question .arrow {
+    border: solid var(--secondary-text-color);
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 4px;
+    transform: rotate(45deg);
+    transition: transform 0.3s ease;
+}
+
+.faq-question.active .arrow {
+    transform: rotate(-135deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, padding 0.3s ease-out;
+    color: var(--secondary-text-color);
+}
+
+.faq-answer p {
+    margin: 0;
+    padding: 0 10px 20px 10px;
+}
+
+#contact a,
+.policy-page a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+#contact a:hover,
+.policy-page a:hover {
+    text-decoration: underline;
+}
+
+/* Privacy Policy Page Styles */
+.policy-page h3 {
+    font-size: 1.3em;
+    margin-top: 40px;
+    border-left: 4px solid var(--accent-color);
+    padding-left: 10px;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 40px;
+    padding: 10px 20px;
+    background-color: var(--accent-color-light);
+    border-radius: 8px;
+}
+
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    color: var(--secondary-text-color);
+    font-size: 0.9em;
+}
+
+.footer-links {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: var(--secondary-text-color);
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer-links a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+    h2 {
+        font-size: 1.5em;
+    }
+    .waves {
+        height: 40px;
+        min-height: 40px;
+    }
+    .content {
+        padding: 20px;
+    }
+}
