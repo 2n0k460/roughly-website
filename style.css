@@ -2,8 +2,8 @@
     --bg-color: #F7F9FC;
     --main-text-color: #333;
     --secondary-text-color: #555;
-    --accent-color: #00ACC1; /* メインカラーに変更 */
-    --accent-color-light: rgba(0, 172, 193, 0.1); /* メインカラーの薄い色に変更 */
+    --accent-color: #00ACC1;
+    --accent-color-light: rgba(0, 172, 193, 0.1);
     --white-color: #FFFFFF;
     --border-color: #EAECEF;
     --shadow-color: rgba(0, 0, 0, 0.08);
@@ -102,7 +102,22 @@ h1 {
 
 main {
     padding: 40px 20px;
+    position: relative;
+    z-index: 1;
 }
+
+.water-level-bg::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 70%;
+    background-image: linear-gradient(to top, var(--accent-color-light), transparent);
+    z-index: -1;
+    opacity: 0.5;
+}
+
 
 section {
     margin-bottom: 60px;
