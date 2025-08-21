@@ -8,12 +8,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="icon.png" type="image/png">
 </head>
 <body>
     <header>
         <div class="container">
             <div class="logo">
-                <img src="https://storage.googleapis.com/gemini-prod/images/05501e74-7221-424a-a169-411f4228c2e6" alt="Roughly Logo">
+                <img src="icon.png" alt="Roughly App Icon" class="logo-icon">
                 <h1>Roughly</h1>
             </div>
         </div>
@@ -24,8 +25,6 @@
             <h2>プライバシーポリシー</h2>
             <p>制定日: 2025年7月18日</p>
             
-            <p>「Roughly」（以下「本アプリ」といいます）は、利用者（以下「ユーザー」といいます）のプライバシーを尊重し、個人情報の保護に最大限の注意を払っています。本プライバシーポリシーは、本アプリにおける情報の取り扱いについて説明するものです。</p>
-
             <h3>1. 取得する情報</h3>
             <p>本アプリは、ユーザーを特定できる個人情報を一切取得しません。ユーザーが本アプリに入力した支出データ（金額、カテゴリ、日付、メモ）は、すべてユーザーのデバイス内にのみ保存されます。これらの情報が開発者を含む第三者に送信されることはありません。</p>
 
@@ -41,7 +40,7 @@
             <h3>5. お問い合わせ</h3>
             <p>
                 本プライバシーポリシーに関するご質問は、以下の連絡先までお問い合わせください。<br>
-                X: <a href="https://x.com/2n0k460">@2n0k460</a>
+                X: <a href="https://x.com/2n0k460" target="_blank" rel="noopener noreferrer">@2n0k460</a>
             </p>
 
             <a href="index.html" class="back-link">サポートページに戻る</a>
@@ -50,7 +49,24 @@
     </main>
 
     <footer>
+        <div class="footer-links">
+             <a href="index.html">サポートページ</a>
+        </div>
         <p>&copy; 2025 Takeshi Asahara. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const hour = new Date().getHours();
+            const body = document.body;
+            if (hour >= 5 && hour < 10) {
+                body.classList.add('theme-morning');
+            } else if (hour >= 20 || hour < 5) {
+                body.classList.add('theme-night');
+            } else {
+                body.classList.add('theme-day');
+            }
+        });
+    </script>
 </body>
 </html>
