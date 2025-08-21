@@ -1,6 +1,5 @@
 /* --- カラーテーマ定義 --- */
 :root {
-    /* デフォルト (Roughlyらしい水色) */
     --bg-color: #F0FDFE;
     --bg-color-rgb: 240, 253, 254;
     --main-text-color: #37474F;
@@ -82,8 +81,22 @@ header { padding: 30px 0; position: relative; z-index: 10; }
 #hero .subtitle {
     font-size: 1.1em;
     color: var(--secondary-text-color);
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
+
+.app-store-link {
+    display: inline-block;
+    margin-bottom: 40px;
+    transition: transform 0.3s ease;
+}
+.app-store-link:hover {
+    transform: scale(1.05);
+}
+.app-store-link img {
+    height: 50px;
+    width: auto;
+}
+
 .hero-image-container {
     display: flex;
     justify-content: center;
@@ -201,37 +214,15 @@ footer { text-align: center; padding: 40px 0; color: var(--secondary-text-color)
 .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1); }
 .fade-in.is-visible { opacity: 1; transform: translateY(0); }
 
-/* ▼▼▼ スマホ表示用のスタイルを修正しました ▼▼▼ */
+/* --- レスポンシブ対応 --- */
 @media (max-width: 768px) {
-    .container {
-        padding: 0 15px; /* 左右の余白を少し調整 */
-    }
-    .logo h1 { 
-        font-size: 2.2em; /* ロゴの文字を少し小さく */
-    }
-    #hero {
-        padding: 20px 0;
-        margin-bottom: 60px;
-    }
-    #hero h2 {
-        font-size: 1.8em; /* ヒーローの文字を少し小さく */
-    }
-    #hero .subtitle {
-        font-size: 1em;
-    }
-    section {
-        padding: 30px 20px; /* セクション内の余白を調整 */
-        margin-bottom: 60px;
-    }
-    section h2 {
-        font-size: 1.5em; /* セクションタイトルの文字を少し小さく */
-    }
-    .screenshot-grid {
-        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-        gap: 20px;
-    }
-    .waves {
-        height: 10vh;
-        min-height: 80px;
-    }
+    .container { padding: 0 15px; }
+    .logo h1 { font-size: 2.2em; }
+    #hero { padding: 20px 0; margin-bottom: 60px; }
+    #hero h2 { font-size: 1.8em; }
+    #hero .subtitle { font-size: 1em; }
+    section { padding: 30px 20px; margin-bottom: 60px; }
+    section h2 { font-size: 1.5em; }
+    .screenshot-grid { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 20px; }
+    .waves { height: 10vh; min-height: 80px; }
 }
